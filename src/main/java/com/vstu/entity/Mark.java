@@ -24,9 +24,9 @@ public class Mark implements Serializable {
 	@NotNull
 	@Column(name = "id_mark")
 	private Integer idMark;
-	@Column(name = "Mark")
+	@Column(name = "mark")
 	private Integer mark;
-	@Column(name = "Date")
+	@Column(name = "date")
 	@Temporal(TemporalType.DATE)
 	private Date date;
 	@JoinColumn(name = "Student", referencedColumnName = "id_stud")
