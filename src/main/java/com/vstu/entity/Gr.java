@@ -15,14 +15,24 @@ import javax.xml.bind.annotation.XmlTransient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "gr")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Gr implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Basic(optional = false)
 	@NotNull
+
 	@Column(name = "id_group")
 	private Integer idGroup;
 	@Size(max = 45)
@@ -33,10 +43,7 @@ public class Gr implements Serializable {
 	private Collection<Stud> studCollection;
 
 	public Gr() {
-	}
 
-	public Gr(Integer idGroup) {
-		this.idGroup = idGroup;
 	}
 
 	public Integer getIdGroup() {

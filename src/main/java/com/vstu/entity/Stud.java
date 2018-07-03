@@ -45,6 +45,7 @@ public class Stud implements Serializable {
 	private Integer course;
 	@JoinColumn(name = "gr", referencedColumnName = "id_group")
 	@ManyToOne
+
 	private Gr gr;
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	@JsonIgnore

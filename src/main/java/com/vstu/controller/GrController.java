@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.vstu.entity.Gr;
 import com.vstu.service.IGrService;
 
+@CrossOrigin(origins = "*")
 @Controller
 @RequestMapping("user")
 public class GrController {
@@ -31,7 +33,7 @@ public class GrController {
 		return new ResponseEntity<Gr>(gr, HttpStatus.OK);
 	}
 
-	@GetMapping("grs")
+	@GetMapping("gr")
 	public ResponseEntity<List<Gr>> getAllGr() {
 		List<Gr> list = grService.getAllGr();
 		return new ResponseEntity<List<Gr>>(list, HttpStatus.OK);
