@@ -24,13 +24,13 @@ public class Teacher implements Serializable {
 	@Basic(optional = false)
 	@NotNull
 	@Column(name = "id_teach")
-	private Integer idTeach;
+	private Integer idteach;
 	@Size(max = 45)
 	@Column(name = "firstname")
-	private String firstName;
+	private String firstname;
 	@Size(max = 45)
 	@Column(name = "surname")
-	private String surName;
+	private String surname;
 	@Size(max = 45)
 	@Column(name = "patronymic")
 	private String patronymic;
@@ -41,32 +41,32 @@ public class Teacher implements Serializable {
 	public Teacher() {
 	}
 
-	public Teacher(Integer idTeach) {
-		this.idTeach = idTeach;
+	public Teacher(Integer idteach) {
+		this.idteach = idteach;
 	}
 
 	public Integer getIdTeach() {
-		return idTeach;
+		return idteach;
 	}
 
-	public void setIdTeach(Integer idTeach) {
-		this.idTeach = idTeach;
+	public void setIdTeach(Integer idteach) {
+		this.idteach = idteach;
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstName(String firstname) {
+		this.firstname = firstname;
 	}
 
 	public String getSurName() {
-		return surName;
+		return surname;
 	}
 
-	public void setSurName(String surName) {
-		this.surName = surName;
+	public void setSurName(String surname) {
+		this.surname = surname;
 	}
 
 	public String getPatronymic() {
@@ -89,7 +89,7 @@ public class Teacher implements Serializable {
 	@Override
 	public int hashCode() {
 		int hash = 0;
-		hash += (idTeach != null ? idTeach.hashCode() : 0);
+		hash += (idteach != null ? idteach.hashCode() : 0);
 		return hash;
 	}
 
@@ -100,8 +100,8 @@ public class Teacher implements Serializable {
 			return false;
 		}
 		Teacher other = (Teacher) object;
-		if ((this.idTeach == null && other.idTeach != null)
-				|| (this.idTeach != null && !this.idTeach.equals(other.idTeach))) {
+		if ((this.idteach == null && other.idteach != null)
+				|| (this.idteach != null && !this.idteach.equals(other.idteach))) {
 			return false;
 		}
 		return true;
@@ -109,11 +109,11 @@ public class Teacher implements Serializable {
 
 	@Override
 	public String toString() {
-		return idTeach + " " + surName + " " + firstName + " " + patronymic;
+		return idteach + " " + surname + " " + firstname + " " + patronymic;
 	}
 
 	public String getFIO() {
-		return surName + " " + firstName + " " + patronymic;
+		return surname + " " + firstname + " " + patronymic;
 	}
 
 }

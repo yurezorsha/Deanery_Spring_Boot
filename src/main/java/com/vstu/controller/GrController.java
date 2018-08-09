@@ -22,7 +22,7 @@ import com.vstu.service.IGrService;
 
 @CrossOrigin(origins = "*")
 @Controller
-@RequestMapping("user")
+@RequestMapping("deanery")
 public class GrController {
 	@Autowired
 	private IGrService grService;

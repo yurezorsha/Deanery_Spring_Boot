@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,9 +19,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.vstu.entity.Teacher;
 import com.vstu.service.ITeacherService;
-
+@CrossOrigin(origins = "*")
 @Controller
-@RequestMapping("user")
+@RequestMapping("deanery")
 public class TeacherController {
 	@Autowired
 	private ITeacherService teacherService;
@@ -31,7 +32,7 @@ public class TeacherController {
 		return new ResponseEntity<Teacher>(Teacher, HttpStatus.OK);
 	}
 
-	@GetMapping("teachers")
+	@GetMapping("teacher")
 	public ResponseEntity<List<Teacher>> getAllTeacher() {
 		List<Teacher> list = teacherService.getAllTeacher();
 		return new ResponseEntity<List<Teacher>>(list, HttpStatus.OK);

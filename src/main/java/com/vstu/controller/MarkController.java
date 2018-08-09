@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,9 +19,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.vstu.entity.Mark;
 import com.vstu.service.IMarkService;
-
+@CrossOrigin(origins = "*")
 @Controller
-@RequestMapping("user")
+@RequestMapping("deanery")
 public class MarkController {
 
 	@Autowired
@@ -32,7 +33,7 @@ public class MarkController {
 		return new ResponseEntity<Mark>(Mark, HttpStatus.OK);
 	}
 
-	@GetMapping("marks")
+	@GetMapping("mark")
 	public ResponseEntity<List<Mark>> getAllMark() {
 		List<Mark> list = markService.getAllMark();
 		return new ResponseEntity<List<Mark>>(list, HttpStatus.OK);
